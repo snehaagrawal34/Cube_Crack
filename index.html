@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubik's Cube Solver</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">CubeCrack</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#about" class="hover:underline">About</a></li>
+                    <li><a href="#how-it-works" class="hover:underline">How It Works</a></li>
+                    <li><a href="#scan" class="hover:underline">Solve Cube</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 px-4">
+        <!-- Hero Section -->
+        <section class="text-center py-12 bg-white shadow-lg rounded-lg" style="background-image: url('https://images.pexels.com/photos/2873277/pexels-photo-2873277.jpeg?auto=compress&cs=tinysrgb&w=600'); background-repeat: no-repeat; background-size:cover; background-position: center;">
+            <h2 class="text-4xl font-bold text-red-500">Solve Your Rubik's Cube in Seconds</h2>
+            <p class="text-4xl font-bold text-red-300">Simply get the 3-Dimensional animation of your Rubik's Cube and get the minimum steps to solve it.</p>
+            <a href="#scan" class="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">Get Started</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="mt-12">
+            <h2 class="text-3xl font-bold text-gray-800">About the Project</h2>
+            <p class="mt-4 text-gray-600">Our Rubik's Cube Solver uses advanced algorithms and cutting-edge computer vision technology to analyze and solve your Rubik's Cube efficiently. The goal is to make solving the cube accessible to everyone, whether you're a beginner or a speedcuber.</p>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="mt-12">
+            <h2 class="text-3xl font-bold text-gray-800">How It Works</h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-xl font-bold text-blue-600">1. Scan Your Cube</h3>
+                    <p class="mt-2 text-gray-600">Use your device's camera to scan all sides of your Rubik's Cube.</p>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-xl font-bold text-blue-600">2. Analyze the Pattern</h3>
+                    <p class="mt-2 text-gray-600">Our AI processes the cube's pattern and identifies the current state.</p>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-xl font-bold text-blue-600">3. Solve in Steps</h3>
+                    <p class="mt-2 text-gray-600">Get the minimum steps required to solve the cube and follow along!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scan Cube Section -->
+        <section id="scan" class="mt-12 text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Solve Your Cube</h2>
+            <p class="mt-4 text-gray-600">Ready to solve your cube? Use the button below to start solving.</p>
+            <a href="backend.html" class="mt-6 px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition inline-block">Solve Cube</a>
+
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Rubik's Cube Solver. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
