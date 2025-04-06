@@ -1,72 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rubik's Cube Solver</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CubeCrack - Rubik's Cube Solver</title>
+  <link rel="icon" href="logo.png" >
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+    .cube-container {
+      width: 200px;
+      height: 200px;
+      perspective: 600px;
+      margin: 0 auto;
+    }
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotate 15s infinite linear;
+    }
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #333;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .cubie {
+      width: 33.33%;
+      height: 33.33%;
+      box-sizing: border-box;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    @keyframes rotate {
+      0% { transform: rotateX(-20deg) rotateY(0deg); }
+      100% { transform: rotateX(-20deg) rotateY(360deg); }
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-blue-600 text-white py-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">CubeCrack</h1>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#about" class="hover:underline">About</a></li>
-                    <li><a href="#how-it-works" class="hover:underline">How It Works</a></li>
-                    <li><a href="#scan" class="hover:underline">Solve Cube</a></li>
-                </ul>
-            </nav>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Navbar -->
+  <header class="bg-blue-700 text-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="logo.png" alt="CubeCrack Logo" class="w-10 h-10 rounded-md shadow" />
+        <h1 class="text-2xl font-extrabold tracking-tight">CubeCrack &#174</h1>
+      </div>
+      <nav>
+        <ul class="flex space-x-6 text-lg">
+          <li><a href="#about" class="hover:underline hover:text-gray-200">About</a></li>
+          <li><a href="#how-it-works" class="hover:underline hover:text-gray-200">How It Works</a></li>
+          <li><a href="#scan" class="hover:underline hover:text-gray-200">Solve Cube</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <br>
+
+  <main class="container mx-auto mt-8 px-4">
+    <!-- Hero Section -->
+    <section class="text-center py-16 bg-white shadow-lg rounded-lg relative overflow-hidden" style="background-image: url('https://images.pexels.com/photos/2873277/pexels-photo-2873277.jpeg?auto=compress&cs=tinysrgb&w=600'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+      <div class="bg-black bg-opacity-50 p-8 rounded-lg relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-red-500">Solve Your Rubik's Cube in Seconds</h2>
+        <p class="mt-4 text-xl md:text-2xl font-semibold text-red-300">Get a 3D animation and the optimal solution in the fewest steps.</p>
+        
+       <!-- 3D Cube Animation with borders and smaller size -->
+<div class="flex justify-center mt-10">
+    <div class="cube-container" style="width: 120px; height: 120px;">
+      <div class="cube">
+         <!-- Front face - White -->
+      <div class="face" style="transform: rotateY(0deg) translateZ(60px); background-color: #ffffff;">
+        <div class="cubie" style="background-color: #ffffff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffffff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffffff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffffff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffffff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffffff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffffff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffffff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffffff; border: 1px solid #000;"></div>
+      </div>
+
+      <!-- Back face - Yellow -->
+      <div class="face" style="transform: rotateY(180deg) translateZ(60px); background-color: #ffff00;">
+        <div class="cubie" style="background-color: #ffff00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffff00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffff00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffff00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffff00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffff00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffff00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffff00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ffff00; border: 1px solid #000;"></div>
+      </div>
+
+      <!-- Right face - Blue -->
+      <div class="face" style="transform: rotateY(90deg) translateZ(60px); background-color: #0000ff;">
+        <div class="cubie" style="background-color: #0000ff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #0000ff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #0000ff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #0000ff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #0000ff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #0000ff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #0000ff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #0000ff; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #0000ff; border: 1px solid #000;"></div>
+      </div>
+
+      <!-- Left face - Green -->
+      <div class="face" style="transform: rotateY(-90deg) translateZ(60px); background-color: #00cc00;">
+        <div class="cubie" style="background-color: #00cc00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #00cc00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #00cc00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #00cc00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #00cc00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #00cc00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #00cc00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #00cc00; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #00cc00; border: 1px solid #000;"></div>
+      </div>
+
+      <!-- Top face - Orange -->
+      <div class="face" style="transform: rotateX(90deg) translateZ(60px); background-color: #ff8000;">
+        <div class="cubie" style="background-color: #ff8000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ff8000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ff8000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ff8000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ff8000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ff8000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ff8000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ff8000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #ff8000; border: 1px solid #000;"></div>
+      </div>
+
+      <!-- Bottom face - Red -->
+      <div class="face" style="transform: rotateX(-90deg) translateZ(60px); background-color: #cc0000;">
+        <div class="cubie" style="background-color: #cc0000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #cc0000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #cc0000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #cc0000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #cc0000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #cc0000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #cc0000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #cc0000; border: 1px solid #000;"></div>
+        <div class="cubie" style="background-color: #cc0000; border: 1px solid #000;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        <!-- Repeat the above structure for all 5 other faces (back, left, right, top, bottom) with colors and borders -->
+        <!-- Back face -->
+        <!-- <div class="face" style="transform: rotateY(180deg) translateZ(60px); background-color: #ffff00;">
+          <div class="cubie" style="background-color: #ffff00; border: 1px solid #000;"></div> -->
+          <!-- repeat for other cubies -->
         </div>
-    </header>
+        <!-- Add Left, Right, Top, Bottom faces similarly -->
+      </div>
+    </div>
+  </div>
+  
+    </section>
+<br><br>
+    <!-- About Section -->
+    <section class="bg-white py-8 md:py-10 text-center">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-12">🎯About the Project</h2>
+      <p class="mt-4 text-lg text-gray-600">Our Rubik's Cube Solver is designed to make solving cubes fun, fast, and effortless. Just input the colors of each face, and our intelligent solver instantly calculates the most efficient solution. Whether you're a curious beginner or a competitive speedcuber, this tool empowers you to learn and master the cube—one step at a time.</p>
+    </section>
 
-    <main class="container mx-auto mt-8 px-4">
-        <!-- Hero Section -->
-        <section class="text-center py-12 bg-white shadow-lg rounded-lg" style="background-image: url('https://images.pexels.com/photos/2873277/pexels-photo-2873277.jpeg?auto=compress&cs=tinysrgb&w=600'); background-repeat: no-repeat; background-size:cover; background-position: center;">
-            <h2 class="text-4xl font-bold text-red-500">Solve Your Rubik's Cube in Seconds</h2>
-            <p class="text-4xl font-bold text-red-300">Simply get the 3-Dimensional animation of your Rubik's Cube and get the minimum steps to solve it.</p>
-            <a href="#scan" class="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">Get Started</a>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="mt-12">
-            <h2 class="text-3xl font-bold text-gray-800">About the Project</h2>
-            <p class="mt-4 text-gray-600">Our Rubik's Cube Solver uses advanced algorithms and cutting-edge computer vision technology to analyze and solve your Rubik's Cube efficiently. The goal is to make solving the cube accessible to everyone, whether you're a beginner or a speedcuber.</p>
-        </section>
-
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="mt-12">
-            <h2 class="text-3xl font-bold text-gray-800">How It Works</h2>
-            <div class="grid md:grid-cols-3 gap-6 mt-6">
-                <div class="p-6 bg-white shadow-lg rounded-lg">
-                    <h3 class="text-xl font-bold text-blue-600">1. Scan Your Cube</h3>
-                    <p class="mt-2 text-gray-600">Use your device's camera to scan all sides of your Rubik's Cube.</p>
-                </div>
-                <div class="p-6 bg-white shadow-lg rounded-lg">
-                    <h3 class="text-xl font-bold text-blue-600">2. Analyze the Pattern</h3>
-                    <p class="mt-2 text-gray-600">Our AI processes the cube's pattern and identifies the current state.</p>
-                </div>
-                <div class="p-6 bg-white shadow-lg rounded-lg">
-                    <h3 class="text-xl font-bold text-blue-600">3. Solve in Steps</h3>
-                    <p class="mt-2 text-gray-600">Get the minimum steps required to solve the cube and follow along!</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Scan Cube Section -->
-        <section id="scan" class="mt-12 text-center">
-            <h2 class="text-3xl font-bold text-gray-800">Solve Your Cube</h2>
-            <p class="mt-4 text-gray-600">Ready to solve your cube? Use the button below to start solving.</p>
-            <a href="backend.html" class="mt-6 px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition inline-block">Solve Cube</a>
-
-
-        </section>
-    </main>
-
-    <footer class="bg-gray-800 text-white py-4 mt-12">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2025 Rubik's Cube Solver. All Rights Reserved.</p>
+<!-- How It Works Section -->
+<section class="bg-purple-100 py-8 md:py-10">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-extrabold text-gray-800 mb-12">🔍 How It Works</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <!-- Step 1 -->
+        <div class="p-8 bg-white shadow-2xl rounded-2xl hover:scale-105 transform transition duration-300">
+          <div class="text-5xl text-blue-500 mb-4">📸</div>
+          <h3 class="text-2xl font-bold text-blue-700">1. Scan Your Cube</h3>
+          <p class="mt-3 text-gray-600">Use your camera or input the cube faces manually. Our guide helps you capture each side quickly and accurately.</p>
         </div>
-    </footer>
+  
+        <!-- Step 2 -->
+        <div class="p-8 bg-white shadow-2xl rounded-2xl hover:scale-105 transform transition duration-300">
+          <div class="text-5xl text-green-500 mb-4">🧠</div>
+          <h3 class="text-2xl font-bold text-green-700">2. Analyze the Pattern</h3>
+          <p class="mt-3 text-gray-600">Our smart algorithm analyzes your cube’s current configuration in real-time using advanced logic.</p>
+        </div>
+  
+        <!-- Step 3 -->
+        <div class="p-8 bg-white shadow-2xl rounded-2xl hover:scale-105 transform transition duration-300">
+          <div class="text-5xl text-purple-500 mb-4">🧩</div>
+          <h3 class="text-2xl font-bold text-purple-700">3. Solve in Steps</h3>
+          <p class="mt-3 text-gray-600">Get the optimal solution in minimal moves with step-by-step visual instructions and real-time cube animations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Scan Cube Section -->
+  <section id="scan" class="mt-20 text-center bg-gradient-to-r from-green-50 to-white py-20 px-6">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-4xl font-extrabold text-gray-800">🚀 Ready to Solve Your Cube?</h2>
+      <p class="mt-4 text-lg text-gray-600">Click below to get started. Whether you're a beginner or speedcuber, we’ve got you covered!</p>
+      <a href="backend.html" class="mt-8 inline-block px-10 py-4 bg-green-600 hover:bg-green-700 text-white text-lg font-semibold rounded-full shadow-lg transition-all duration-300">
+        Solve Cube Now
+      </a>
+    </div>
+  </section>
+  
+
+  <footer class="bg-gray-800 text-white py-6 mt-16">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 CubeCrack. All Rights Reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
